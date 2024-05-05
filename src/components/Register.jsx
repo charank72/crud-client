@@ -1,45 +1,39 @@
-import React, { useRef } from "react";
 import axios from "axios";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { API_ENDPOINT } from "../constant";
-import "./login.css";
-function Login() {
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Register() {
   const femail = useRef();
   const fpass = useRef();
-  const navigate = useNavigate();
-  const authenticateUser = async (user,id) => {
-    await axios
-      .post(`/api/user/login`, user)
-      .then((res) => {
-        console.log(res.data);
-        console.log(res.data.user.username);
-        // navigate("/");
-        localStorage.setItem("email", res.data.user.email);
-        if (res.data.user.role === "admin") {
-          navigate("/admin");
-        } else {
-          console.log("user");
-          navigate(`/user/${res.data.user.id}`);
-        }
-      })
-      .catch((err) => err);
-  };
-  const submit = async (e) => {
+  const fname = useRef();
+
+  const navigate=useNavigate()
+  const submitHandler = async (e) => {
     e.preventDefault();
     try {
       let data = {
+        name: fname.current.value,
         email: femail.current.value,
         password: fpass.current.value,
       };
-      // console.log(data);
-      authenticateUser(data);
+      console.log(data);
+      await axios
+        .post("/api/user/create", data)
+        .then((res) => {
+          console.log(res.data.user);
+  
+          // setToken(res.data.user.token);
+  
+          navigate(`/`);
+        })
+       
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
   return (
     <div>
-      <form autoComplete="off" className="login" onSubmit={submit}>
+      <form autoComplete="off" className="login" onSubmit={submitHandler}>
         <div className="left">
           <img
             src="https://cdn.dribbble.com/users/1172503/screenshots/4505740/login-form.gif"
@@ -54,6 +48,17 @@ function Login() {
               name="email"
               id="email"
               ref={femail}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="form-group mt-2">
+            <label htmlFor="">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              ref={fname}
               className="form-control"
               required
             />
@@ -75,7 +80,6 @@ function Login() {
               value="Login"
               className="form-control btn btn-outline-info mt"
             />
-           <NavLink to={'/register'}> <button>Reg</button></NavLink>
           </div>
         </div>
       </form>
@@ -83,4 +87,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
