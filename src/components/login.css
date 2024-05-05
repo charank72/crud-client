@@ -1,0 +1,32 @@
+.login {
+  display: flex;
+  height: 100vh;
+}
+.left {
+  flex: 1;
+}
+
+.right {
+  margin: auto;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.right .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 2rem;
+  font-size: 1.3rem;
+}
+.right input {
+  width: 50%;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+.right input[type="submit"] {
+  font-size: 1.5rem;
+  width: 30%;
+  margin-left: 13%;
+ 
+}
