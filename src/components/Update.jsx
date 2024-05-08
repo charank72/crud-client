@@ -36,8 +36,8 @@ function Update() {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Update details</h1>
-      <form action="" onSubmit={handleUpdate}>
-        <div className="right">
+      <form  action="" onSubmit={handleUpdate}>
+        <div className="right" style={{marginLeft:'5rem'}}>
           <div className="form-group mt-2">
             <label htmlFor="">Email</label>
             <input
@@ -63,7 +63,7 @@ function Update() {
           <div className="form-group mt-2">
             <input
               type="submit"
-              value="Login"
+              value="Update"
               className="form-control btn btn-outline-info mt"
             />
           </div>
