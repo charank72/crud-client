@@ -20,10 +20,7 @@ function Register() {
       await axios
         .post("/api/user/create", data)
         .then((res) => {
-          console.log(res.data.user);
-  
-          // setToken(res.data.user.token);
-  
+          console.log(res.data.user);  
           navigate(`/`);
         })
        
@@ -41,14 +38,13 @@ function Register() {
           />
         </div>
         <div className="right">
-          <div className="form-group mt-2">
+          <div className="form-group">
             <label htmlFor="">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               ref={femail}
-              className="form-control"
               required
             />
           </div>
@@ -59,26 +55,23 @@ function Register() {
               name="name"
               id="name"
               ref={fname}
-              className="form-control"
               required
             />
           </div>
-          <div className="form-group mt-2">
+          <div className="form-group">
             <label htmlFor="">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               ref={fpass}
-              className="form-control"
               required
             />
           </div>
-          <div className="form-group mt-2">
+          <div className="form-group">
             <input
               type="submit"
-              value="Login"
-              className="form-control btn btn-outline-info mt"
+              value="Register"
             />
           </div>
         </div>

@@ -24,9 +24,9 @@
   height: 2rem;
   font-size: 1.2rem;
 }
-.right input[type="submit"] {
+.right input[type="submit"], .registerbtn button {
   font-size: 1.5rem;
   width: 30%;
   margin-left: 13%;
- 
+  height: 2rem;
 }

@@ -47,7 +47,7 @@ function Login() {
           />
         </div>
         <div className="right">
-          <div className="form-group mt-2">
+          <div className="form-group">
             <label htmlFor="">Email</label>
             <input
               type="email"
@@ -58,7 +58,7 @@ function Login() {
               required
             />
           </div>
-          <div className="form-group mt-2">
+          <div className="form-group">
             <label htmlFor="">Password</label>
             <input
               type="password"
@@ -69,13 +69,12 @@ function Login() {
               required
             />
           </div>
-          <div className="form-group mt-2">
+          <div className="form-group">
             <input
               type="submit"
               value="Login"
-              className="form-control btn btn-outline-info mt"
             />
-           <NavLink to={'/register'}> <button>Reg</button></NavLink>
+           <NavLink to={'/register'} className="registerbtn"> <button>Register</button></NavLink>
           </div>
         </div>
       </form>

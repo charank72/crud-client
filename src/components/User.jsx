@@ -24,11 +24,11 @@ function User() {
   return (
     <div>
       <h1 style={{ textAlign: "center", textTransform: "uppercase" }}>
-        your details
+        User details
       </h1>
       <div style={{ textAlign: "left" ,marginLeft:'12em'}}>
-        <h1>Your Name:{user.name}</h1>
-        <h1>Your Email:{user.email}</h1>
+        <h1>User Name:{user.name}</h1>
+        <h1>User Email:{user.email}</h1>
       </div>
     </div>
   );
